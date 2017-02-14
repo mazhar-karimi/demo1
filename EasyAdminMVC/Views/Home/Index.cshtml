@@ -1,0 +1,19 @@
+﻿<div class="container">
+    @using (Ajax.BeginForm("Search", "Home", new AjaxOptions()
+    {
+        HttpMethod = "Get",
+        UpdateTargetId = "result",
+        InsertionMode = InsertionMode.Replace
+    }))
+    {
+        <div class="row">
+            <input type="text" name="q" value="" />
+            <input type="submit" name="btn" value="Search" />
+        </div>
+    } 
+
+    <div id="result" class="row">
+
+    </div>
+</div>
+
