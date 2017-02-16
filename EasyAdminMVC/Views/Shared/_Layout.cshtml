@@ -34,12 +34,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
     <!--//end-animate-->
     <!----webfonts--->
-    <link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
     <!---//webfonts--->
     <!-- Meters graphs -->
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <!-- Placed js at the end of the document so the pages load faster -->
+    <script src="~/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <link href="~/css/dataTables.bootstrap.min.css" rel="stylesheet" />
 
 </head>
 
@@ -61,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 <!--sidebar nav start-->
                 <ul class="nav nav-pills nav-stacked custom-nav">
-                    <li class="active"><a href="index.html"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
+                    @*<li class="active"><a href="index.html"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
                     <li class="menu-list">
                         <a href="#">
                             <i class="lnr lnr-cog"></i>
@@ -72,9 +75,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="widgets.html">Widgets</a></li>
                         </ul>
                     </li>
-                    <li><a href="forms.html"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>
-                    <li><a href="tables.html"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>
-                    <li class="menu-list">
+                    <li><a href="forms.html"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>*@
+                    <li class="active"><a href="@Url.Action("Index","Complain")"><i class="lnr lnr-menu"></i> <span>Complains</span></a></li>
+                    <li><a href="@Url.Action("Index","PC")"><i class="lnr lnr-menu"></i> <span>Users</span></a></li>
+                    <li><a href="@Url.Action("Index","PC")"><i class="lnr lnr-menu"></i> <span>PC</span></a></li>
+                    <li><a href="@Url.Action("Index","PC")"><i class="lnr lnr-menu"></i> <span>Locations</span></a></li>
+                    @*<li class="menu-list">
                         <a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
                         <ul class="sub-menu-list">
                             <li><a href="inbox.html">Inbox</a> </li>
@@ -96,7 +102,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="sign-up.html">Sign Up</a></li>
                             <li><a href="blank_page.html">Blank Page</a></li>
                         </ul>
-                    </li>
+                    </li>*@
                 </ul>
                 <!--sidebar nav end-->
             </div>

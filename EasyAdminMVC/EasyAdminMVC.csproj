@@ -144,6 +144,7 @@
       <DependentUpon>ComplainCenterModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ComplainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -158,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="blank_page.html" />
+    <Content Include="Campaigns.html" />
     <Content Include="charts.html" />
     <Content Include="codes.html" />
     <Content Include="compose-mail.html" />
@@ -217,6 +219,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\dataTables.bootstrap.min.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="css\graph.css" />
     <Content Include="css\icon-font.min.css" />
@@ -250,7 +253,9 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\Chart.js" />
     <Content Include="js\classie.js" />
+    <Content Include="js\dataTables.bootstrap.min.js" />
     <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="js\jquery.dataTables.min.js" />
     <Content Include="js\jquery.flexisel.js" />
     <Content Include="js\jquery.flot.min.js" />
     <Content Include="js\jquery.nicescroll.js" />
@@ -338,6 +343,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Complain\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

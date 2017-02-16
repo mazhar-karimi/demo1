@@ -26,5 +26,7 @@ namespace EasyAdminMVC.Controllers
                 );
             return PartialView((object)users);
         }
+
+
     }
 }
