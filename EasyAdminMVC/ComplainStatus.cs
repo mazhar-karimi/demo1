@@ -12,26 +12,16 @@ namespace EasyAdminMVC
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class ComplainStatus
     {
-        public User()
+        public ComplainStatus()
         {
             this.Complains = new HashSet<Complain>();
-            this.Complains1 = new HashSet<Complain>();
-            this.Complains2 = new HashSet<Complain>();
-            this.Complains3 = new HashSet<Complain>();
         }
     
         public int Id { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public Nullable<int> UserTypeId { get; set; }
         public string Name { get; set; }
     
-        public virtual UserType UserType { get; set; }
         public virtual ICollection<Complain> Complains { get; set; }
-        public virtual ICollection<Complain> Complains1 { get; set; }
-        public virtual ICollection<Complain> Complains2 { get; set; }
-        public virtual ICollection<Complain> Complains3 { get; set; }
     }
 }

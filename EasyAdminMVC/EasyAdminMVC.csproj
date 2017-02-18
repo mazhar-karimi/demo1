@@ -128,6 +128,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Complain.cs">
+      <DependentUpon>ComplainCenterModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ComplainCenterModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,11 +146,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ComplainCenterModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ComplainStatus.cs">
+      <DependentUpon>ComplainCenterModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ComplainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>ComplainCenterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PC.cs">
+      <DependentUpon>ComplainCenterModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs">

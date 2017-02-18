@@ -27,5 +27,9 @@ namespace EasyAdminMVC
     
         public DbSet<User> Users { get; set; }
         public DbSet<UserType> UserTypes { get; set; }
+        public DbSet<Complain> Complains { get; set; }
+        public DbSet<ComplainStatus> ComplainStatuses { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<PC> PCs { get; set; }
     }
 }

@@ -8,6 +8,17 @@
         <EntityTypeShape EntityType="ComplainCenterModel.User" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ComplainCenterModel.UserType" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <AssociationConnector Association="ComplainCenterModel.FK_Users_UserTypes" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ComplainCenterModel.Complain" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="ComplainCenterModel.ComplainStatus" Width="1.5" PointX="3" PointY="5.625" />
+        <EntityTypeShape EntityType="ComplainCenterModel.Location" Width="1.5" PointX="3" PointY="8" />
+        <EntityTypeShape EntityType="ComplainCenterModel.PC" Width="1.5" PointX="3" PointY="10.375" />
+        <AssociationConnector Association="ComplainCenterModel.FK_Complains_ComplainStatuses" />
+        <AssociationConnector Association="ComplainCenterModel.FK_Complains_Locations" />
+        <AssociationConnector Association="ComplainCenterModel.FK_Complains_PCs" />
+        <AssociationConnector Association="ComplainCenterModel.FK_Complains_Users" />
+        <AssociationConnector Association="ComplainCenterModel.FK_Complains_Users1" />
+        <AssociationConnector Association="ComplainCenterModel.FK_Complains_Users2" />
+        <AssociationConnector Association="ComplainCenterModel.FK_Complains_Users3" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
