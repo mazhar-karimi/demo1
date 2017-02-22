@@ -299,7 +299,7 @@
           <NavigationProperty Name="Location" Relationship="ComplainCenterModel.FK_Complains_Locations" FromRole="Complain" ToRole="Location" />
           <NavigationProperty Name="PC" Relationship="ComplainCenterModel.FK_Complains_PCs" FromRole="Complain" ToRole="PC" />
           <NavigationProperty Name="Resolver" Relationship="ComplainCenterModel.FK_Complains_Users" FromRole="Complain" ToRole="User" />
-          <NavigationProperty Name="Assigner" Relationship="ComplainCenterModel.FK_Complains_Users1" FromRole="Complain" ToRole="User" />
+          <NavigationProperty Name="Assignee" Relationship="ComplainCenterModel.FK_Complains_Users1" FromRole="Complain" ToRole="User" />
           <NavigationProperty Name="Complainer" Relationship="ComplainCenterModel.FK_Complains_Users2" FromRole="Complain" ToRole="User" />
           <NavigationProperty Name="Updater" Relationship="ComplainCenterModel.FK_Complains_Users3" FromRole="Complain" ToRole="User" />
         </EntityType>

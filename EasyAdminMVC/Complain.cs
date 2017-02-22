@@ -33,7 +33,7 @@ namespace EasyAdminMVC
         public virtual Location Location { get; set; }
         public virtual PC PC { get; set; }
         public virtual User Resolver { get; set; }
-        public virtual User Assigner { get; set; }
+        public virtual User Assignee { get; set; }
         public virtual User Complainer { get; set; }
         public virtual User Updater { get; set; }
     }

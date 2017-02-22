@@ -158,6 +158,7 @@
     <Compile Include="Location.cs">
       <DependentUpon>ComplainCenterModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ComplainResult.cs" />
     <Compile Include="PC.cs">
       <DependentUpon>ComplainCenterModel.tt</DependentUpon>
     </Compile>
@@ -360,7 +361,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
