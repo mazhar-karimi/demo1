@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EasyAdminMVC.Models;
+ 
 
 namespace EasyAdminMVC.Controllers
 {
@@ -14,9 +15,9 @@ namespace EasyAdminMVC.Controllers
         {
             List<Complain> complains = null;
             var _total = 0;
-
-
-             
+            
+ 
+            
                 
                 if (String.IsNullOrEmpty(keyword))
                 {
@@ -78,8 +79,3 @@ namespace EasyAdminMVC.Controllers
         }
     }
 }
-
-
-//var param = "Address";    
-//var propertyInfo = typeof(Student).GetProperty(param);    
-//var orderByAddress = items.OrderBy(x => propertyInfo.GetValue(x, null));

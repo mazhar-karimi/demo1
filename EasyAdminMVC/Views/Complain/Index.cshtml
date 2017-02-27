@@ -25,10 +25,19 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div id="example_filter" class="dataTables_filter">
-                        <input type="text" name="search" class="form-control1 input-search" placeholder="Search...">
-                        <button class="btn btn-success" type="submit"><i class="fa fa-search icon-ser"></i></button>
-                    </div>
+                    @using (Html.BeginForm("Index", "Complain", FormMethod.Get))
+                    {
+                        <div id="example_filter" class="dataTables_filter">
+                            <input type="text" name="keyword" class="form-control1 input-search" placeholder="Search...">
+
+                            <input class="btn btn-success fa fa-search icon-ser" type="submit" name="name" value="Search" />
+                            @*<button class="btn btn-success" type="submit">
+
+                                <i class="fa fa-search icon-ser"></i>
+                                </button>*@
+                        </div>
+                    }
+                    
                 </div>
             </div>
 
@@ -82,7 +91,23 @@
             </div>
             <div class="row">
                 <div class="col-sm-5">
-                    <div class="dataTables_info" id="example_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+
+                    @{
+                        var _totalrecords = 0;
+                    }
+
+                    @if (cp + 1 == total && (ps * total) > Model.TotalComplains)
+                    {
+                        _totalrecords = Model.TotalComplains;
+                    }
+                    else
+                    {
+                        _totalrecords = ps * (cp + 1);
+                    }
+
+                    <div class="dataTables_info" id="example_info" role="status" aria-live="polite">
+                        Showing @Html.Raw((ps * cp) + 1) to  @Html.Raw(_totalrecords) of @Model.TotalComplains entries
+                    </div>
                 </div>
                 <div class="col-sm-7">
                     <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
@@ -93,7 +118,7 @@
                                     <a href="@Url.Action("Index", new { p = cp-1 })" aria-controls="example" data-dt-idx="0" tabindex="0">Previous</a>
                                 </li>
                             }
-                           
+
 
                             @for (int i = 0; i < total; i++)
                             {
@@ -108,7 +133,7 @@
                                     <a href="@Url.Action("Index", new { p = cp + 1 })" aria-controls="example" data-dt-idx="7" tabindex="0">Next</a>
                                 </li>
                             }
-                          
+
                         </ul>
                     </div>
                 </div>
