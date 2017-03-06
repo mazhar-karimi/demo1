@@ -96,5 +96,14 @@ namespace EasyAdminMVC.Controllers
             TempData["message"] = "Complain has been generated.";
             return RedirectToAction("Index");
         }
+
+        public ActionResult Delete(int Id)
+        {
+            var obj = db.Complains.Find(Id);
+            db.Complains.Remove(obj);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }
