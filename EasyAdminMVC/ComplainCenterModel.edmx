@@ -4,68 +4,68 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ComplainCenterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="ComplainCenterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
         <EntityType Name="Complains">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Title" MaxLength="500" Type="nvarchar" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="ResolvedBy" Type="int" />
           <Property Name="ResolvedDate" Type="datetime" />
           <Property Name="AssignedTo" Type="int" />
           <Property Name="ComplainBy" Type="int" />
           <Property Name="ComplainDate" Type="datetime" />
-          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Code" MaxLength="50" Type="varchar" />
           <Property Name="UpdateBy" Type="int" />
           <Property Name="UpdatedDate" Type="datetime" />
           <Property Name="LocationId" Type="int" />
           <Property Name="ComplainStatusId" Type="int" />
           <Property Name="PCId" Type="int" />
-          <Property Name="EvidenceFileName" Type="varchar" MaxLength="50" />
+          <Property Name="EvidenceFileName" MaxLength="50" Type="varchar" />
         </EntityType>
         <EntityType Name="ComplainStatuses">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Id" Nullable="false" Type="int" />
+          <Property Name="Name" MaxLength="50" Type="varchar" />
         </EntityType>
         <EntityType Name="Locations">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Id" Nullable="false" Type="int" />
+          <Property Name="Name" MaxLength="50" Type="varchar" />
         </EntityType>
         <EntityType Name="PCs">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Id" Nullable="false" Type="int" />
+          <Property Name="Name" MaxLength="50" Type="varchar" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="50" />
-          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Email" MaxLength="50" Type="varchar" />
+          <Property Name="Password" MaxLength="50" Type="varchar" />
           <Property Name="UserTypeId" Type="int" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Name" MaxLength="50" Type="varchar" />
         </EntityType>
         <EntityType Name="UserTypes">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Id" Nullable="false" Type="int" />
+          <Property Name="Name" MaxLength="50" Type="varchar" />
         </EntityType>
         <Association Name="FK_Complains_ComplainStatuses">
-          <End Role="ComplainStatuses" Type="Self.ComplainStatuses" Multiplicity="0..1" />
-          <End Role="Complains" Type="Self.Complains" Multiplicity="*" />
+          <End Type="Self.ComplainStatuses" Multiplicity="0..1" Role="ComplainStatuses" />
+          <End Type="Self.Complains" Multiplicity="*" Role="Complains" />
           <ReferentialConstraint>
             <Principal Role="ComplainStatuses">
               <PropertyRef Name="Id" />
@@ -76,8 +76,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Complains_Locations">
-          <End Role="Locations" Type="Self.Locations" Multiplicity="0..1" />
-          <End Role="Complains" Type="Self.Complains" Multiplicity="*" />
+          <End Type="Self.Locations" Multiplicity="0..1" Role="Locations" />
+          <End Type="Self.Complains" Multiplicity="*" Role="Complains" />
           <ReferentialConstraint>
             <Principal Role="Locations">
               <PropertyRef Name="Id" />
@@ -88,8 +88,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Complains_PCs">
-          <End Role="PCs" Type="Self.PCs" Multiplicity="0..1" />
-          <End Role="Complains" Type="Self.Complains" Multiplicity="*" />
+          <End Type="Self.PCs" Multiplicity="0..1" Role="PCs" />
+          <End Type="Self.Complains" Multiplicity="*" Role="Complains" />
           <ReferentialConstraint>
             <Principal Role="PCs">
               <PropertyRef Name="Id" />
@@ -100,8 +100,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Complains_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="Complains" Type="Self.Complains" Multiplicity="*" />
+          <End Type="Self.Users" Multiplicity="0..1" Role="Users" />
+          <End Type="Self.Complains" Multiplicity="*" Role="Complains" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -112,8 +112,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Complains_Users1">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="Complains" Type="Self.Complains" Multiplicity="*" />
+          <End Type="Self.Users" Multiplicity="0..1" Role="Users" />
+          <End Type="Self.Complains" Multiplicity="*" Role="Complains" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -124,8 +124,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Complains_Users2">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="Complains" Type="Self.Complains" Multiplicity="*" />
+          <End Type="Self.Users" Multiplicity="0..1" Role="Users" />
+          <End Type="Self.Complains" Multiplicity="*" Role="Complains" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -136,8 +136,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Complains_Users3">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="Complains" Type="Self.Complains" Multiplicity="*" />
+          <End Type="Self.Users" Multiplicity="0..1" Role="Users" />
+          <End Type="Self.Complains" Multiplicity="*" Role="Complains" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -148,8 +148,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_UserTypes">
-          <End Role="UserTypes" Type="Self.UserTypes" Multiplicity="0..1" />
-          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <End Type="Self.UserTypes" Multiplicity="0..1" Role="UserTypes" />
+          <End Type="Self.Users" Multiplicity="*" Role="Users" />
           <ReferentialConstraint>
             <Principal Role="UserTypes">
               <PropertyRef Name="Id" />
@@ -167,36 +167,36 @@
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserTypes" EntityType="Self.UserTypes" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Complains_ComplainStatuses" Association="Self.FK_Complains_ComplainStatuses">
-            <End Role="ComplainStatuses" EntitySet="ComplainStatuses" />
-            <End Role="Complains" EntitySet="Complains" />
+            <End EntitySet="ComplainStatuses" Role="ComplainStatuses" />
+            <End EntitySet="Complains" Role="Complains" />
           </AssociationSet>
           <AssociationSet Name="FK_Complains_Locations" Association="Self.FK_Complains_Locations">
-            <End Role="Locations" EntitySet="Locations" />
-            <End Role="Complains" EntitySet="Complains" />
+            <End EntitySet="Locations" Role="Locations" />
+            <End EntitySet="Complains" Role="Complains" />
           </AssociationSet>
           <AssociationSet Name="FK_Complains_PCs" Association="Self.FK_Complains_PCs">
-            <End Role="PCs" EntitySet="PCs" />
-            <End Role="Complains" EntitySet="Complains" />
+            <End EntitySet="PCs" Role="PCs" />
+            <End EntitySet="Complains" Role="Complains" />
           </AssociationSet>
           <AssociationSet Name="FK_Complains_Users" Association="Self.FK_Complains_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Complains" EntitySet="Complains" />
+            <End EntitySet="Users" Role="Users" />
+            <End EntitySet="Complains" Role="Complains" />
           </AssociationSet>
           <AssociationSet Name="FK_Complains_Users1" Association="Self.FK_Complains_Users1">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Complains" EntitySet="Complains" />
+            <End EntitySet="Users" Role="Users" />
+            <End EntitySet="Complains" Role="Complains" />
           </AssociationSet>
           <AssociationSet Name="FK_Complains_Users2" Association="Self.FK_Complains_Users2">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Complains" EntitySet="Complains" />
+            <End EntitySet="Users" Role="Users" />
+            <End EntitySet="Complains" Role="Complains" />
           </AssociationSet>
           <AssociationSet Name="FK_Complains_Users3" Association="Self.FK_Complains_Users3">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Complains" EntitySet="Complains" />
+            <End EntitySet="Users" Role="Users" />
+            <End EntitySet="Complains" Role="Complains" />
           </AssociationSet>
           <AssociationSet Name="FK_Users_UserTypes" Association="Self.FK_Users_UserTypes">
-            <End Role="UserTypes" EntitySet="UserTypes" />
-            <End Role="Users" EntitySet="Users" />
+            <End EntitySet="UserTypes" Role="UserTypes" />
+            <End EntitySet="Users" Role="Users" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -303,7 +303,7 @@
           <NavigationProperty Name="Assignee" Relationship="ComplainCenterModel.FK_Complains_Users1" FromRole="Complain" ToRole="User" />
           <NavigationProperty Name="Complainer" Relationship="ComplainCenterModel.FK_Complains_Users2" FromRole="Complain" ToRole="User" />
           <NavigationProperty Name="Updater" Relationship="ComplainCenterModel.FK_Complains_Users3" FromRole="Complain" ToRole="User" />
-          <Property Name="EvidenceFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EvidenceFileName" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
         </EntityType>
         <EntityType Name="ComplainStatus">
           <Key>
