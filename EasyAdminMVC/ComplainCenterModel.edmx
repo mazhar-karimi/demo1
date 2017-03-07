@@ -23,6 +23,7 @@
           <Property Name="LocationId" Type="int" />
           <Property Name="ComplainStatusId" Type="int" />
           <Property Name="PCId" Type="int" />
+          <Property Name="EvidenceFileName" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="ComplainStatuses">
           <Key>
@@ -302,6 +303,7 @@
           <NavigationProperty Name="Assignee" Relationship="ComplainCenterModel.FK_Complains_Users1" FromRole="Complain" ToRole="User" />
           <NavigationProperty Name="Complainer" Relationship="ComplainCenterModel.FK_Complains_Users2" FromRole="Complain" ToRole="User" />
           <NavigationProperty Name="Updater" Relationship="ComplainCenterModel.FK_Complains_Users3" FromRole="Complain" ToRole="User" />
+          <Property Name="EvidenceFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ComplainStatus">
           <Key>
@@ -439,6 +441,7 @@
           <EntitySetMapping Name="Complains">
             <EntityTypeMapping TypeName="ComplainCenterModel.Complain">
               <MappingFragment StoreEntitySet="Complains">
+                <ScalarProperty Name="EvidenceFileName" ColumnName="EvidenceFileName" />
                 <ScalarProperty Name="PCId" ColumnName="PCId" />
                 <ScalarProperty Name="ComplainStatusId" ColumnName="ComplainStatusId" />
                 <ScalarProperty Name="LocationId" ColumnName="LocationId" />

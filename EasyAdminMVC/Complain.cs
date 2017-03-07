@@ -28,6 +28,7 @@ namespace EasyAdminMVC
         public Nullable<int> LocationId { get; set; }
         public Nullable<int> ComplainStatusId { get; set; }
         public Nullable<int> PCId { get; set; }
+        public string EvidenceFileName { get; set; }
     
         public virtual ComplainStatus ComplainStatus { get; set; }
         public virtual Location Location { get; set; }
