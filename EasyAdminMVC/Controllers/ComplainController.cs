@@ -92,7 +92,7 @@ namespace EasyAdminMVC.Controllers
 
             if (Request.Files != null && Request.Files[0] != null && !String.IsNullOrEmpty(Request.Files[0].FileName))
             {
-                var file = Request.Files[0];
+                var file = Request.Files[0]; 
                 var file_name = file.FileName;
                 var file_path = Server.MapPath("~" + "\\evidences\\");
                 file.SaveAs(file_path + file_name);
